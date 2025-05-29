@@ -23,3 +23,20 @@ data.dropna(inplace=True)
 
 print("The total amount of trading days downloaded", len(data))
 data.tail()
+
+#Parameters - loockback + threshold
+lookback_range = range(10, 61) #This is the amount of days we base our average on
+entry_threshold_range = range(0.02) #this is the threshold to buy/enter at
+exit_threshold_range = range(0.02) #this is the threshold to sell/exit at
+window_size = 63
+
+returns = []
+positions = []
+
+#Optimization loop. Brute force check all the best thresholds + lookback period
+#This optimization loops is a forward walk meaning. For each day t we compute the best lookback, entry/exit threshold to make that days
+#trade. We then continue forward and reoptimize the next day, and then the next, and so on . . .
+#The profit and loss of this strategy is the aggregate of all the "optimized" days and this is the result of our backtest
+#I will also extend this to calculate the sharpe ratio
+for t in range(window_size):
+
