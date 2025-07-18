@@ -1,0 +1,7 @@
+2025-07-16T09:30:01Z | LEVEL=ERROR | CODE=502 | MSG=Connection timeout on endpoint /trade/submit | TRACE_ID=abc123xyz
+2025-07-16T09:30:02Z | LEVEL=INFO | CODE=200 | MSG=Order submitted successfully | TRACE_ID=def456uvw
+2025-07-16T09:30:03Z | LEVEL=ERROR | CODE=503 | MSG=Service unavailable during order check | TRACE_ID=ghi789rst
+2025-07-16T09:30:04Z | LEVEL=INFO | CODE=200 | MSG=Heartbeat check passed | TRACE_ID=jkl012opq
+2025-07-16T09:30:05Z | LEVEL=WARN | CODE=429 | MSG=Rate limit approaching on /trade/cancel | TRACE_ID=mno345lmn
+2025-07-16T09:30:06Z | LEVEL=INFO | CODE=200 | MSG=Order cancelled successfully | TRACE_ID=pqr678stu
+2025-07-16T09:30:07Z | LEVEL=ERROR | CODE=504 | MSG=Gateway timeout waiting for exchange response | TRACE_ID=vwx901yza

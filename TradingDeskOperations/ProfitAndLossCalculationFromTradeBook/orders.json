@@ -1,0 +1,62 @@
+[
+  {
+    "symbol": "AAPL",
+    "side": "BUY",
+    "quantity": 100,
+    "price": 150.0
+  },
+  {
+    "symbol": "AAPL",
+    "side": "BUY",
+    "quantity": 50,
+    "price": 152.0
+  },
+  {
+    "symbol": "MSFT",
+    "side": "BUY",
+    "quantity": 200,
+    "price": 220.0
+  },
+  {
+    "symbol": "AAPL",
+    "side": "SELL",
+    "quantity": 120,
+    "price": 155.0
+  },
+  {
+    "symbol": "MSFT",
+    "side": "SELL",
+    "quantity": 50,
+    "price": 225.0
+  },
+  {
+    "symbol": "GOOG",
+    "side": "SELL",
+    "quantity": 30,
+    "price": 2800.0
+  },
+  {
+    "symbol": "GOOG",
+    "side": "BUY",
+    "quantity": 20,
+    "price": 2790.0
+  },
+  {
+    "symbol": "AAPL",
+    "side": "SELL",
+    "quantity": 50,
+    "price": 158.0
+  },
+  {
+    "symbol": "MSFT",
+    "side": "BUY",
+    "quantity": 100,
+    "price": 218.0
+  },
+  {
+    "symbol": "MSFT",
+    "side": "SELL",
+    "quantity": 300,
+    "price": 215.0
+  }
+]

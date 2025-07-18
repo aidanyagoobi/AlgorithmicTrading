@@ -95,3 +95,4 @@ print("Number of trades executed:", sum([1 for r in returns if r != 0]))
 print("Total return over period:", np.sum(returns))
 print("Mean daily return:", np.mean(returns))
 print("Sharpe Ratio Annualized:", (np.mean(returns) / np.std(returns)) * np.sqrt(252) if np.std(returns) != 0 else 0)
+
