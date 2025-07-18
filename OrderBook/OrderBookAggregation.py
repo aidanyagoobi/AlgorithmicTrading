@@ -6,7 +6,7 @@ from decimal import Decimal #helps to deal w/ floating point errors
 symbol = "SOLUSDT" #lower volume
 url = "https://api.binance.us/api/v3/depth"
 
-interval = Decimal('0.1') #aggregating up to 10 cents
+interval = Decimal('1') #this is the interval you can aggregate to
 
 params = {
     "symbol": symbol,
@@ -17,7 +17,7 @@ data=requests.get(url, params).json()
 
 
 bid_levels = pd.DataFrame(data["bids"], columns = ['price', 'quantity'], dtype=float)
-print(bid_levels)
+bid_levels["side"] = "bid"
 
 min_bid_level = math.floor(min(bid_levels.price) / float(interval)) * interval
 max_bid_level = math.ceil(max(bid_levels.price) / float(interval) + 1) * interval
@@ -29,4 +29,8 @@ bid_level_bounds = [float(min_bid_level + interval * x) for x in range(int((max_
                     ]
 bid_levels['bin']=pd.cut(bid_levels.price, bins=bid_level_bounds, right= False, precision=10)
 
-bid_levels = bid_levels.groupby("bing")
+bid_levels = bid_levels.groupby("bin").agg(quantity=("quantity", "sum"), side =
+("side", "first")).reset_index() #first ensures that we take the first row value when we group by
+
+bid_levels["label"] = bid_levels.bin.apply(lambda x: x.left)
+print(bid_levels)
